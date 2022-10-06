@@ -1,0 +1,17 @@
+button{
+    font-size: 30px;
+    border-radius: 3px;
+    border: 0px;
+    margin: 5px;
+}
+
+.inicioSesion{
+    color: blue;
+    background-color: white;
+}
+
+.nuevaCuenta{
+    background-color: aquamarine;
+
+
+}
