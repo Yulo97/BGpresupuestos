@@ -1,10 +1,10 @@
 import React from "react";
 import '../estilos/Input.css'
 
-function Input({placeHolder, inputTipe }){
+function Input({name, placeHolder, inputTipe }){
     return(
         <div>
-            <input type={inputTipe} placeholder={placeHolder}></input>
+            <input id={name} type={inputTipe} placeholder={placeHolder}></input>
         </div>
     );
 }

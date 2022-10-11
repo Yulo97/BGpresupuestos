@@ -2,10 +2,26 @@ import './App.css';
 import Boton from "./componentes/Boton.js"
 import Input from "./componentes/Input"
 
+import { useState } from "react";
+
 function App() {
 
-  const iniciarSesion = () => {
-    console.log('inicaste sesion')
+  const [userName, setUserName] = useState("");
+  const [userPass, setUserPass] = useState("");
+
+
+  const iniciarSesion = e => {
+
+    e.preventDefault();
+
+    setUserName(document.getElementById("inputName").value);
+    setUserPass(document.getElementById("inputPass").value);
+    
+    iniciarSesion2();
+  }
+
+  const iniciarSesion2 = () => {
+    alert('User: ' + userName + " // Pass: " + userPass);
   }
 
   const crearUsuario = () => {
@@ -19,9 +35,8 @@ function App() {
         <h1>Presupuestos</h1> 
       </div> 
 
-
-      <Input inputTipe="email" placeHolder="Email"/>
-      <Input inputTipe="password" placeHolder="Contraseña"/>
+      <Input name="inputName" inputTipe="email" placeHolder="Email"/>
+      <Input name="inputPass" inputTipe="password" placeHolder="Contraseña"/>
 
       <div className='contenedorBtnSesion'>
         <Boton tipoBtn="inicioSesion" texto="Iniciar Sesion" functionClick={iniciarSesion}/>
